@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wire Harness Reference — Rouse // Brenden Wells</title>
+<title>Wire Harness Reference — Brenden Wells // 19' Rouse</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -34,7 +34,6 @@
     min-height: 100vh;
   }
 
-  /* HEADER */
   header {
     background: var(--surface);
     border-bottom: 2px solid var(--accent);
@@ -52,7 +51,6 @@
     margin-bottom: 14px;
   }
 
-  .title-block {}
   .eyebrow {
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px;
@@ -61,20 +59,10 @@
     text-transform: uppercase;
     margin-bottom: 4px;
   }
-  h1 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.2;
-  }
-  h1 span {
-    color: var(--accent);
-  }
+  h1 { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.2; }
+  h1 span { color: var(--accent); }
 
-  /* SEARCH */
-  .search-wrap {
-    position: relative;
-  }
+  .search-wrap { position: relative; }
   #search {
     background: var(--surface2);
     border: 1px solid var(--border);
@@ -88,23 +76,9 @@
     transition: border-color 0.15s;
   }
   #search:focus { border-color: var(--accent); }
-  .search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 13px;
-  }
+  .search-icon { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 13px; }
 
-  /* NAV TABS */
-  .tabs {
-    display: flex;
-    gap: 4px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
+  .tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab {
     font-family: 'Share Tech Mono', monospace;
@@ -119,21 +93,10 @@
     transition: all 0.15s;
     letter-spacing: 0.05em;
   }
-  .tab.active {
-    background: var(--accent);
-    color: #0f1117;
-    border-color: var(--accent);
-    font-weight: 700;
-  }
+  .tab.active { background: var(--accent); color: #0d0a0a; border-color: var(--accent); font-weight: 700; }
 
-  /* MAIN */
-  main {
-    padding: 16px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
+  main { padding: 16px; max-width: 900px; margin: 0 auto; }
 
-  /* SECTION */
   .section { display: none; }
   .section.visible { display: block; }
 
@@ -149,21 +112,10 @@
   }
 
   /* DEUTSCH CARDS */
-  .card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  @media (min-width: 600px) {
-    .card-grid { grid-template-columns: 1fr 1fr; }
-  }
+  .card-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 600px) { .card-grid { grid-template-columns: 1fr 1fr; } }
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
   .card-header {
     background: var(--surface2);
     padding: 10px 14px;
@@ -172,53 +124,38 @@
     align-items: center;
     border-bottom: 1px solid var(--border);
   }
-  .card-name {
-    font-weight: 600;
-    font-size: 13px;
-  }
+  .card-name { font-weight: 600; font-size: 13px; }
   .card-type {
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px;
     color: var(--accent);
-    background: rgba(245,166,35,0.12);
+    background: rgba(224,85,85,0.12);
     padding: 2px 7px;
     border-radius: 3px;
-    border: 1px solid rgba(245,166,35,0.3);
+    border: 1px solid rgba(224,85,85,0.3);
   }
-  .card-pins {
-    padding: 10px 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .pin-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 12px;
-  }
-  .pin-num {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--pin);
-    font-size: 11px;
-    min-width: 28px;
-  }
-  .pin-desc { color: var(--text); flex: 1; }
 
-  /* PINOUT TABLES */
-  .table-wrap {
-    overflow-x: auto;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-  }
-  thead {
+  /* DEUTSCH TABLE inside card */
+  .card table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .card th {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
     background: var(--surface2);
   }
+  .card td { padding: 7px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .card tr:last-child td { border-bottom: none; }
+  .card tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* PINOUT TABLES */
+  .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  thead { background: var(--surface2); }
   th {
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px;
@@ -230,46 +167,19 @@
     border-bottom: 1px solid var(--border);
     white-space: nowrap;
   }
-  td {
-    padding: 8px 12px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
+  td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
   tr:last-child td { border-bottom: none; }
   tr.unused td { color: var(--unused-text); }
   tr:not(.unused):hover td { background: rgba(255,255,255,0.03); }
 
-  .pin-cell {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--pin);
-    font-size: 11px;
-    white-space: nowrap;
-  }
-  .color-cell {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--wire);
-    font-size: 11px;
-  }
-  .note-cell {
-    color: var(--muted);
-    font-size: 11px;
-    font-style: italic;
-  }
-  .psi-cell {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--accent2);
-    font-size: 11px;
-  }
+  .pin-cell { font-family: 'Share Tech Mono', monospace; color: var(--pin); font-size: 11px; white-space: nowrap; }
+  .color-cell { font-family: 'Share Tech Mono', monospace; color: var(--wire); font-size: 11px; }
+  .note-cell { color: var(--muted); font-size: 11px; font-style: italic; }
+  .psi-cell { font-family: 'Share Tech Mono', monospace; color: var(--accent2); font-size: 11px; }
 
   /* RELAY BOX */
-  .relay-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
-  @media (min-width: 500px) {
-    .relay-grid { grid-template-columns: 1fr 1fr 1fr; }
-  }
+  .relay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (min-width: 500px) { .relay-grid { grid-template-columns: 1fr 1fr 1fr; } }
   .relay-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -279,39 +189,32 @@
     flex-direction: column;
     gap: 4px;
   }
-  .relay-num {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 10px;
-    color: var(--muted);
-    letter-spacing: 0.08em;
-  }
-  .relay-use {
-    font-weight: 600;
-    font-size: 13px;
-  }
-  .relay-note {
-    font-size: 11px;
-    color: var(--muted);
-  }
-  .relay-fuse {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 11px;
-    color: var(--accent);
-    margin-top: 4px;
-  }
+  .relay-num { font-family: 'Share Tech Mono', monospace; font-size: 10px; color: var(--muted); letter-spacing: 0.08em; }
+  .relay-use { font-weight: 600; font-size: 13px; }
+  .relay-note { font-size: 11px; color: var(--muted); }
+  .relay-fuse { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--accent); margin-top: 2px; }
+  .relay-wire { font-family: 'Share Tech Mono', monospace; font-size: 11px; color: var(--wire); }
   .relay-unused .relay-use { color: var(--unused-text); }
   .relay-unused .relay-fuse { color: var(--unused-text); }
+  .relay-unused .relay-wire { color: var(--unused-text); }
+
+  .leash-legend {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 12px;
+  }
+  .leash-legend span { display: flex; align-items: center; gap: 6px; }
+  .leash-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
   /* SEARCH */
   tr.hidden-row { display: none; }
   .card.hidden-card { display: none; }
-  .no-results {
-    text-align: center;
-    color: var(--muted);
-    font-size: 13px;
-    padding: 32px 0;
-    font-style: italic;
-  }
+  .no-results { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 0; font-style: italic; }
 </style>
 </head>
 <body>
@@ -334,19 +237,17 @@
     <div class="tab" data-tab="j2a">J2A</div>
     <div class="tab" data-tab="j3">J3</div>
     <div class="tab" data-tab="dash">Dash</div>
-    <div class="tab" data-tab="leash">Leash Box</div>
+    <div class="tab" data-tab="leash">Leash Relay Module</div>
   </div>
 </header>
 
 <main>
 
-<!-- DEUTSCH -->
 <div class="section visible" id="tab-deutsch">
   <div class="section-title">Deutsch Connectors</div>
   <div class="card-grid" id="deutsch-cards"></div>
 </div>
 
-<!-- J1A -->
 <div class="section" id="tab-j1a">
   <div class="section-title">J1A — ECU Connector A (Sensors &amp; Inputs)</div>
   <div class="table-wrap">
@@ -357,7 +258,6 @@
   </div>
 </div>
 
-<!-- J1B -->
 <div class="section" id="tab-j1b">
   <div class="section-title">J1B — ECU Connector B (Outputs &amp; Injectors)</div>
   <div class="table-wrap">
@@ -368,7 +268,6 @@
   </div>
 </div>
 
-<!-- J2A -->
 <div class="section" id="tab-j2a">
   <div class="section-title">J2A — ECU Connector 2A (Pressure Sensors)</div>
   <div class="table-wrap">
@@ -379,7 +278,6 @@
   </div>
 </div>
 
-<!-- J3 -->
 <div class="section" id="tab-j3">
   <div class="section-title">J3 — Oil Pressure Connector</div>
   <div class="table-wrap">
@@ -390,7 +288,6 @@
   </div>
 </div>
 
-<!-- DASH -->
 <div class="section" id="tab-dash">
   <div class="section-title">Dash Connector</div>
   <div class="table-wrap">
@@ -401,36 +298,153 @@
   </div>
 </div>
 
-<!-- LEASH -->
 <div class="section" id="tab-leash">
-  <div class="section-title">Leash Box — Relays &amp; Fuses</div>
+  <div class="section-title">Leash Relay Module — Relays &amp; Fuses</div>
   <div class="relay-grid" id="leash-grid"></div>
+  <div class="leash-legend">
+    <span><span class="dot" style="background:#e05555"></span> Power — Red</span>
+    <span><span class="dot" style="background:#333"></span> Ground — Black</span>
+  </div>
 </div>
-
 
 </main>
 
-
 <script>
-// ─── DATA ───────────────────────────────────────────────────────────────────
-
+// ─── DEUTSCH DATA ────────────────────────────────────────────────────────────
+// Each pin: { fn: "function", color: "wire color" }
 const deutsch = [
-  { name: "Fuel Level", type: "DTM-3", pins: ["Power (White)", "Signal (Grey)", "Ground (Black)"] },
-  { name: "Bilge", type: "DT-2", pins: ["Power (Brown)", "Ground (Black)"] },
-  { name: "Diverter", type: "DTP-4", pins: ["Power (Red)", "Ground (Black)", "Signal 1 up (Dark Green)", "Signal 2 down (Dark Blue)"] },
-  { name: "Fuel Pump", type: "DTP-2", pins: ["Power (Red)", "Ground (Black)"] },
-  { name: "Boost Solenoid 1", type: "DTM-2", pins: ["Power (White)", "Ground trigger from ECU (Black)"] },
-  { name: "Boost Solenoid 2", type: "DTM-2", pins: ["Power (White)", "Ground trigger from ECU (Black)"] },
-  { name: "Solenoid 1 (Bucket)", type: "DT-4", pins: ["Power (Red)", "Power jumped to Pin 1 (Red)", "Output to ECU — 2 Step/Launch Input #1", "Ground (Black)"] },
-  { name: "Solenoid 2 (Pop Off)", type: "DT-3", pins: ["Power (Grey/Yellow)", "Not Used", "Ground (Black)"] },
-  { name: "Steering Wheel", type: "DT-12", pins: ["Power (Red)", "Power jumped (Red)", "Power jumped (Red)", "Power jumped (Red)", "Diverter Up", "Diverter Down", "Bucket Up", "Bucket Down", "Pop Off Up / Not Used", "Pop Off Down / Pressurize", "Scramble", "—"] },
-  { name: "Switch Panel", type: "DT-6", pins: ["Power (Red)", "Air Compressor", "Bilge", "Not Used", "Starter", "Ignition"] },
-  { name: "Air Compressor", type: "DTP-2", pins: ["Power (Red)", "Ground (Black)"] },
-  { name: "Boat Harness In Box", type: "DT-12", pins: ["Constant 12v (Red)", "Switched 12v/Ign (White)", "Can Lo (Orange/Black)", "Can Hi (Orange)", "Starter (Purple)", "Air Compressor Trigger (Yellow)", "Not Used", "Virtual Switch 1 (Red/Blue)", "Virtual Switch 2 (Red/Yellow)", "Scramble (Tan)", "Diverter Up (Dark Blue)", "Pop Off Input (Red/Green)"] },
-  { name: "Sensor to J3", type: "DTM-2", pins: ["Sensor +5v (Orange)", "Sensor Ground (Black/White)"] },
-  { name: "Cam Sync", type: "DTM-3", pins: ["Power (Red)", "Signal (Purple)", "Ground (Black)"] },
+  {
+    name: "Fuel Level", type: "DTM-3",
+    pins: [
+      { fn: "Power",   color: "White" },
+      { fn: "Signal",  color: "Grey" },
+      { fn: "Ground",  color: "Black" },
+    ]
+  },
+  {
+    name: "Bilge", type: "DT-2",
+    pins: [
+      { fn: "Power",   color: "Brown" },
+      { fn: "Ground",  color: "Black" },
+    ]
+  },
+  {
+    name: "Diverter", type: "DTP-4",
+    pins: [
+      { fn: "Power",          color: "Red" },
+      { fn: "Ground",         color: "Black" },
+      { fn: "Signal 1 (Up)",  color: "Dark Green" },
+      { fn: "Signal 2 (Down)",color: "Dark Blue" },
+    ]
+  },
+  {
+    name: "Fuel Pump", type: "DTP-2",
+    pins: [
+      { fn: "Power",  color: "Red" },
+      { fn: "Ground", color: "Black" },
+    ]
+  },
+  {
+    name: "Boost Solenoid 1 — Vent", type: "DTM-2",
+    pins: [
+      { fn: "Power",                    color: "White" },
+      { fn: "Ground trigger from ECU",  color: "Grey/Green" },
+    ]
+  },
+  {
+    name: "Boost Solenoid 2 — Fill", type: "DTM-2",
+    pins: [
+      { fn: "Power",                    color: "White" },
+      { fn: "Ground trigger from ECU",  color: "Grey/Black" },
+    ]
+  },
+  {
+    name: "Solenoid 1 (Bucket)", type: "DTM-4",
+    pins: [
+      { fn: "Power",                                          color: "Red" },
+      { fn: "Power (jumped from Pin 1)",                      color: "Red" },
+      { fn: "Output to ECU — 2 Step/Launch Input #1",         color: "Red" },
+      { fn: "Ground",                                         color: "Black" },
+    ]
+  },
+  {
+    name: "Solenoid 2 (Pop Off)", type: "DTM-3",
+    pins: [
+      { fn: "Power",    color: "Grey/Yellow" },
+      { fn: "Not Used", color: "" },
+      { fn: "Ground",   color: "Black" },
+    ]
+  },
+  {
+    name: "Steering Wheel", type: "DTM-12",
+    pins: [
+      { fn: "Power",                          color: "Red" },
+      { fn: "Power (jumped from Pin 1)",       color: "Red" },
+      { fn: "Power (jumped from Pin 1)",       color: "Red" },
+      { fn: "Power (jumped from Pin 1)",       color: "Red" },
+      { fn: "Diverter Up",                    color: "Dark Blue" },
+      { fn: "Diverter Down",                  color: "Dark Green" },
+      { fn: "Bucket Up",                      color: "Light Blue" },
+      { fn: "Bucket Down",                    color: "Light Green" },
+      { fn: "Pop Off Up / Future Use",        color: "" },
+      { fn: "Pop Off Down / Pressurize",      color: "Red/Green" },
+      { fn: "Scramble",                       color: "Tan" },
+      { fn: "—",                              color: "" },
+    ]
+  },
+  {
+    name: "Switch Panel", type: "DT-6",
+    pins: [
+      { fn: "Power",          color: "Red" },
+      { fn: "Air Compressor", color: "Yellow" },
+      { fn: "Bilge",          color: "Brown" },
+      { fn: "Not Used",       color: "" },
+      { fn: "Starter",        color: "Purple" },
+      { fn: "Ignition",       color: "White" },
+    ]
+  },
+  {
+    name: "Air Compressor", type: "DTP-2",
+    pins: [
+      { fn: "Power",  color: "Red" },
+      { fn: "Ground", color: "Black" },
+    ]
+  },
+  {
+    name: "Boat Harness In Box", type: "DT-12",
+    pins: [
+      { fn: "Constant 12v",             color: "Red" },
+      { fn: "Switched 12v / Ignition",  color: "White" },
+      { fn: "CAN Lo",                   color: "Orange/Black" },
+      { fn: "CAN Hi",                   color: "Orange" },
+      { fn: "Starter",                  color: "Purple" },
+      { fn: "Air Compressor Trigger",   color: "Yellow" },
+      { fn: "Not Used",                 color: "" },
+      { fn: "Virtual Switch 1",         color: "Red/Blue" },
+      { fn: "Virtual Switch 2",         color: "Red/Yellow" },
+      { fn: "Scramble",                 color: "Tan" },
+      { fn: "Diverter Up",              color: "Dark Blue" },
+      { fn: "Pop Off Input",            color: "Red/Green" },
+    ]
+  },
+  {
+    name: "Sensor to J3", type: "DTM-2",
+    pins: [
+      { fn: "Sensor +5v",     color: "Orange" },
+      { fn: "Sensor Ground",  color: "Black/White" },
+    ]
+  },
+  {
+    name: "Cam Sync", type: "DTM-3",
+    pins: [
+      { fn: "Power",   color: "Red" },
+      { fn: "Signal",  color: "Purple" },
+      { fn: "Ground",  color: "Black" },
+    ]
+  },
 ];
 
+// ─── ECU / TABLE DATA ────────────────────────────────────────────────────────
 const j1a = [
   { pin:"A1",  use:"Not Used",                                       color:"",             purpose:"",                           note:"" },
   { pin:"A2",  use:"Fuel Pump Out (+12v) (10A Max)",                 color:"Red",          purpose:"Fuel pump relay trigger",    note:"" },
@@ -496,38 +510,38 @@ const j1b = [
 ];
 
 const j2a = [
-  { pin:"A1",  use:"Input #6 (52THG)",   color:"White",        purpose:"Intake high",                                              psi:"150" },
-  { pin:"A2",  use:"Input #10 (52THG)",  color:"White/Red",    purpose:"Water pressure (intercooler, regulated) / H2O1",           psi:"150" },
-  { pin:"A3",  use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A4",  use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A5",  use:"Input #21 (5HG)",    color:"White/Yellow", purpose:"Scramble",                                                 psi:"" },
-  { pin:"A6",  use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A7",  use:"WB2 COMPR2",         color:"Tan",          purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A8",  use:"WB2 Shield",         color:"Shield",       purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A9",  use:"WB2 HTR −",          color:"Yellow",       purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A10", use:"Input #5 (52THG)",   color:"White/Black",  purpose:"Dome",                                                     psi:"50 (3.5bar)" },
-  { pin:"A11", use:"Input #9 (52HG)",    color:"White/Orange", purpose:"Air compressor",                                           psi:"200" },
-  { pin:"A12", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A13", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A14", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A16", use:"WB2 COMPR1",         color:"Brown",        purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A17", use:"WB2 VS−/IP+",        color:"Black",        purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A18", use:"Sensor Ground",      color:"Black/White",  purpose:"",                                                         psi:"" },
-  { pin:"A19", use:"Input #8 (52THG)",   color:"White/Yellow", purpose:"Bowl",                                                     psi:"500" },
-  { pin:"A20", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A21", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A22", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A23", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A24", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A25", use:"WB2 VS+",            color:"Red",          purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A26", use:"Sensor +5v",         color:"Orange",       purpose:"",                                                         psi:"" },
-  { pin:"A27", use:"Input #7 (52THG)",   color:"White/Grey",   purpose:"Intake low",                                               psi:"150" },
-  { pin:"A28", use:"Input #11 (52THG)",  color:"White/Blue",   purpose:"Water pressure (motor, regulated) / H2O2",                 psi:"75" },
-  { pin:"A30", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A31", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A32", use:"Not Used",           color:"",             purpose:"",                                                         psi:"" },
-  { pin:"A33", use:"WB2 IP+",            color:"White",        purpose:"Wideband 2",                                               psi:"" },
-  { pin:"A34", use:"WB2 HTR +",          color:"Orange",       purpose:"Wideband 2",                                               psi:"" },
+  { pin:"A1",  use:"Input #6 (52THG)",   color:"White",        purpose:"Intake high",                                    psi:"150" },
+  { pin:"A2",  use:"Input #10 (52THG)",  color:"White/Red",    purpose:"Water pressure (intercooler, regulated) / H2O1", psi:"150" },
+  { pin:"A3",  use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A4",  use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A5",  use:"Input #21 (5HG)",    color:"White/Yellow", purpose:"Scramble",                                       psi:"" },
+  { pin:"A6",  use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A7",  use:"WB2 COMPR2",         color:"Tan",          purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A8",  use:"WB2 Shield",         color:"Shield",       purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A9",  use:"WB2 HTR −",          color:"Yellow",       purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A10", use:"Input #5 (52THG)",   color:"White/Black",  purpose:"Dome",                                           psi:"50 (3.5bar)" },
+  { pin:"A11", use:"Input #9 (52HG)",    color:"White/Orange", purpose:"Air compressor",                                 psi:"200" },
+  { pin:"A12", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A13", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A14", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A16", use:"WB2 COMPR1",         color:"Brown",        purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A17", use:"WB2 VS−/IP+",        color:"Black",        purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A18", use:"Sensor Ground",      color:"Black/White",  purpose:"",                                               psi:"" },
+  { pin:"A19", use:"Input #8 (52THG)",   color:"White/Yellow", purpose:"Bowl",                                           psi:"500" },
+  { pin:"A20", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A21", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A22", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A23", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A24", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A25", use:"WB2 VS+",            color:"Red",          purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A26", use:"Sensor +5v",         color:"Orange",       purpose:"",                                               psi:"" },
+  { pin:"A27", use:"Input #7 (52THG)",   color:"White/Grey",   purpose:"Intake low",                                     psi:"150" },
+  { pin:"A28", use:"Input #11 (52THG)",  color:"White/Blue",   purpose:"Water pressure (motor, regulated) / H2O2",       psi:"75" },
+  { pin:"A30", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A31", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A32", use:"Not Used",           color:"",             purpose:"",                                               psi:"" },
+  { pin:"A33", use:"WB2 IP+",            color:"White",        purpose:"Wideband 2",                                     psi:"" },
+  { pin:"A34", use:"WB2 HTR +",          color:"Orange",       purpose:"Wideband 2",                                     psi:"" },
 ];
 
 const j3 = [
@@ -539,7 +553,24 @@ const j3 = [
   { pin:"B6",  use:"Not Used",      color:"",            purpose:"" },
   { pin:"B7",  use:"Not Used",      color:"",            purpose:"" },
   { pin:"B8",  use:"Sensor +5v",    color:"Orange",      purpose:"Oil Pressure" },
-  ...Array.from({length:18}, (_,i)=>({ pin:`B${i+9}`, use:"Not Used", color:"", purpose:"" }))
+  { pin:"B9",  use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B10", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B11", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B12", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B13", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B14", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B15", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B16", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B17", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B18", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B19", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B20", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B21", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B22", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B23", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B24", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B25", use:"Not Used",      color:"",            purpose:"" },
+  { pin:"B26", use:"Not Used",      color:"",            purpose:"" },
 ];
 
 const dash = [
@@ -578,42 +609,93 @@ const dash = [
 ];
 
 const leash = [
-  { relay:1, use:"Starter",         note:"",                             fuse:20 },
-  { relay:2, use:"Coil 1",          note:"Passenger bank (2, 4, 6, 8)", fuse:40 },
-  { relay:3, use:"Coil 2",          note:"Driver bank (1, 3, 5, 7)",    fuse:40 },
-  { relay:4, use:"Injectors",       note:"",                             fuse:20 },
-  { relay:5, use:"Fuel Pump",       note:"",                             fuse:30 },
-  { relay:6, use:"Air Compressor",  note:"",                             fuse:30 },
-  { relay:7, use:"Not Used",        note:"",                             fuse:null },
-  { relay:8, use:"Not Used",        note:"Ground trigger capable",       fuse:null },
+  { relay:1, use:"Starter",         note:"",                             fuse:20,   wire:"Yellow" },
+  { relay:2, use:"Coil 1",          note:"Passenger bank (2, 4, 6, 8)", fuse:40,   wire:"Orange" },
+  { relay:3, use:"Coil 2",          note:"Driver bank (1, 3, 5, 7)",    fuse:40,   wire:"Blue" },
+  { relay:4, use:"Injectors",       note:"",                             fuse:20,   wire:"Purple" },
+  { relay:5, use:"Fuel Pump",       note:"",                             fuse:30,   wire:"Pink" },
+  { relay:6, use:"Air Compressor",  note:"",                             fuse:30,   wire:"White" },
+  { relay:7, use:"Not Used",        note:"",                             fuse:null, wire:"Grey" },
+  { relay:8, use:"Not Used",        note:"Ground trigger capable",       fuse:null, wire:"Green" },
 ];
 
-// ─── RENDER ─────────────────────────────────────────────────────────────────
+// ─── WIRE COLOR MAP ──────────────────────────────────────────────────────────
+const wireColors = {
+  'red':              '#e74c3c',
+  'black':            '#aaaaaa',
+  'white':            '#f0f0f0',
+  'green':            '#2ecc71',
+  'dark green':       '#1a7a3a',
+  'light green':      '#7dde9a',
+  'blue':             '#3498db',
+  'dark blue':        '#1a4fa0',
+  'light blue':       '#7ec8e3',
+  'yellow':           '#f1c40f',
+  'orange':           '#e67e22',
+  'purple':           '#9b59b6',
+  'brown':            '#a0522d',
+  'grey':             '#95a5a6',
+  'gray':             '#95a5a6',
+  'tan':              '#d2b48c',
+  'pink':             '#ff8fab',
+  'beige':            '#e8d5b7',
+  'shield':           '#95a5a6',
+};
 
-function isUnused(use) {
-  return !use || use.toLowerCase().includes("not used");
+function getWireColor(colorStr) {
+  if (!colorStr) return null;
+  const lower = colorStr.toLowerCase().trim();
+  // Direct match
+  if (wireColors[lower]) return wireColors[lower];
+  // Check if first word matches (e.g. "Red/Black" → red)
+  const first = lower.split(/[\/&, ]/)[0].trim();
+  if (wireColors[first]) return wireColors[first];
+  return null;
 }
 
-// Deutsch cards
+function colorCell(colorStr) {
+  if (!colorStr) return `<td></td>`;
+  // Split on / or & keeping the delimiter visible
+  const delimiters = /([\/&])/;
+  const parts = colorStr.split(delimiters);
+  const html = parts.map(part => {
+    if (part === '/' || part === '&') return `<span style="color:var(--muted)">${part}</span>`;
+    const hex = getWireColor(part.trim());
+    return hex ? `<span style="color:${hex}">${part}</span>` : `<span>${part}</span>`;
+  }).join('');
+  return `<td class="color-cell">${html}</td>`;
+}
 const dcards = document.getElementById('deutsch-cards');
 deutsch.forEach((c, ci) => {
   const card = document.createElement('div');
   card.className = 'card';
   card.dataset.idx = ci;
-  const pins = c.pins.map((p, i) =>
-    `<div class="pin-row"><span class="pin-num">P${i+1}</span><span class="pin-desc">${p}</span></div>`
-  ).join('');
+
+  const rows = c.pins.map((p, i) => {
+    const isUnused = !p.fn || p.fn === '—' || p.fn.toLowerCase().includes('not used');
+    return `<tr${isUnused ? ' class="unused"' : ''}>
+      <td class="pin-cell">P${i+1}</td>
+      <td>${p.fn}</td>
+      ${colorCell(p.color)}
+    </tr>`;
+  }).join('');
+
   card.innerHTML = `
     <div class="card-header">
       <span class="card-name">${c.name}</span>
       <span class="card-type">${c.type}</span>
     </div>
-    <div class="card-pins">${pins}</div>
+    <table>
+      <thead><tr><th>Pin</th><th>Function</th><th>Color</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
   `;
   dcards.appendChild(card);
 });
 
-// Generic table renderer
+// ─── RENDER TABLES ───────────────────────────────────────────────────────────
+function isUnused(use) { return !use || use.toLowerCase().includes("not used"); }
+
 function renderTable(id, data, cols) {
   const tbody = document.querySelector(`#${id} tbody`);
   data.forEach(row => {
@@ -621,11 +703,9 @@ function renderTable(id, data, cols) {
     if (isUnused(row.use)) tr.classList.add('unused');
     tr.innerHTML = cols.map(c => {
       let val = row[c.key] ?? '';
-      if (!val) return `<td></td>`;
-      if (c.cls === 'pin-cell') return `<td class="pin-cell">${val}</td>`;
-      if (c.cls === 'color-cell') return `<td class="color-cell">${val}</td>`;
-      if (c.cls === 'note-cell') return `<td class="note-cell">${val}</td>`;
-      if (c.cls === 'psi-cell') return val ? `<td class="psi-cell">${val}</td>` : `<td></td>`;
+      if (!val && c.cls !== 'color-cell') return `<td></td>`;
+      if (c.cls === 'color-cell') return colorCell(val);
+      if (c.cls) return `<td class="${c.cls}">${val}</td>`;
       return `<td>${val}</td>`;
     }).join('');
     tbody.appendChild(tr);
@@ -633,16 +713,13 @@ function renderTable(id, data, cols) {
 }
 
 renderTable('j1a-table', j1a, [
-  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'},
-  {key:'purpose'}, {key:'note', cls:'note-cell'}
+  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'}, {key:'purpose'}, {key:'note', cls:'note-cell'}
 ]);
 renderTable('j1b-table', j1b, [
-  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'},
-  {key:'purpose'}, {key:'note', cls:'note-cell'}
+  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'}, {key:'purpose'}, {key:'note', cls:'note-cell'}
 ]);
 renderTable('j2a-table', j2a, [
-  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'},
-  {key:'purpose'}, {key:'psi', cls:'psi-cell'}
+  {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'}, {key:'purpose'}, {key:'psi', cls:'psi-cell'}
 ]);
 renderTable('j3-table', j3, [
   {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'}, {key:'purpose'}
@@ -651,7 +728,7 @@ renderTable('dash-table', dash, [
   {key:'pin', cls:'pin-cell'}, {key:'use'}, {key:'color', cls:'color-cell'}, {key:'note', cls:'note-cell'}
 ]);
 
-// Leash
+// ─── RENDER LEASH ────────────────────────────────────────────────────────────
 const lgrid = document.getElementById('leash-grid');
 leash.forEach(r => {
   const card = document.createElement('div');
@@ -661,11 +738,18 @@ leash.forEach(r => {
     <div class="relay-use">${r.use}</div>
     ${r.note ? `<div class="relay-note">${r.note}</div>` : ''}
     <div class="relay-fuse">${r.fuse ? `${r.fuse}A fuse` : 'No fuse'}</div>
+    ${r.wire ? `<div class="relay-wire">${colorCell(r.wire).replace(/^<td[^>]*>|<\/td>$/g,'')}</div>` : ''}
   `;
   lgrid.appendChild(card);
 });
 
 // ─── TABS ────────────────────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.querySelector(`.tab[data-tab="${name}"]`).classList.add('active');
+  document.getElementById('tab-' + name).classList.add('visible');
+}
 
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -676,7 +760,6 @@ document.querySelectorAll('.tab').forEach(tab => {
 });
 
 // ─── SEARCH ──────────────────────────────────────────────────────────────────
-
 function clearSearch() {
   document.querySelectorAll('tr.hidden-row').forEach(r => r.classList.remove('hidden-row'));
   document.querySelectorAll('.card.hidden-card').forEach(c => c.classList.remove('hidden-card'));
@@ -688,61 +771,39 @@ document.getElementById('search').addEventListener('input', function() {
   const q = this.value.trim().toLowerCase();
   if (!q) return;
 
-  // Search all table rows across every tab
   const tableIds = ['j1a-table','j1b-table','j2a-table','j3-table','dash-table'];
   tableIds.forEach(tid => {
-    let shown = 0;
-    const rows = document.querySelectorAll(`#${tid} tbody tr`);
-    rows.forEach(tr => {
-      if (tr.textContent.toLowerCase().includes(q)) {
-        shown++;
-      } else {
-        tr.classList.add('hidden-row');
-      }
+    document.querySelectorAll(`#${tid} tbody tr`).forEach(tr => {
+      if (!tr.textContent.toLowerCase().includes(q)) tr.classList.add('hidden-row');
     });
-    // If a tab has results, switch to it automatically (first match wins)
   });
 
-  // Search Deutsch cards
   document.querySelectorAll('#deutsch-cards .card').forEach(card => {
-    if (!card.textContent.toLowerCase().includes(q)) {
-      card.classList.add('hidden-card');
-    }
+    if (!card.textContent.toLowerCase().includes(q)) card.classList.add('hidden-card');
   });
 
-  // Auto-switch to the first tab that has visible results
-  const tabOrder = ['deutsch','j1a','j1b','j2a','j3','dash','leash'];
+  // Auto-switch to first tab with results
+  const tabOrder = ['deutsch','j1a','j1b','j2a','j3','dash'];
   for (const tabName of tabOrder) {
     if (tabName === 'deutsch') {
-      const visible = document.querySelectorAll('#deutsch-cards .card:not(.hidden-card)');
-      if (visible.length > 0) { switchTab(tabName); return; }
-    } else if (tabName === 'leash') {
-      continue; // leash has no search
+      if (document.querySelectorAll('#deutsch-cards .card:not(.hidden-card)').length > 0) {
+        switchTab(tabName); return;
+      }
     } else {
-      const tableId = tabName + '-table';
-      const visible = document.querySelectorAll(`#${tableId} tbody tr:not(.hidden-row)`);
-      if (visible.length > 0) { switchTab(tabName); return; }
+      if (document.querySelectorAll(`#${tabName}-table tbody tr:not(.hidden-row)`).length > 0) {
+        switchTab(tabName); return;
+      }
     }
   }
 
-  // No results anywhere — stay on current tab and show message
+  // No results
   const activeTab = document.querySelector('.tab.active').dataset.tab;
-  const containerId = activeTab === 'deutsch' ? 'deutsch-cards' : activeTab + '-table';
+  const cid = activeTab === 'deutsch' ? 'deutsch-cards' : activeTab + '-table';
   const el = document.createElement('div');
   el.className = 'no-results';
   el.textContent = 'No matching pins found across any connector.';
-  document.getElementById(containerId)?.appendChild(el);
+  document.getElementById(cid)?.appendChild(el);
 });
-
-function switchTab(name) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
-  document.querySelector(`.tab[data-tab="${name}"]`).classList.add('active');
-  document.getElementById('tab-' + name).classList.add('visible');
-}
-
-// Hide unused rows in tables by default - keep them just dimmed (already handled by CSS)
-document.querySelectorAll('tr.hidden-row').forEach(r => r.classList.remove('hidden-row'));
 </script>
 </body>
 </html>
