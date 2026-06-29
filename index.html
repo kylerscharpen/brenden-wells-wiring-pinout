@@ -12,11 +12,11 @@
     --surface: #1a1010;
     --surface2: #221515;
     --border: #3d1f1f;
-    --accent: #c0392b;
-    --accent2: #e74c3c;
+    --accent: #e05555;
+    --accent2: #f07070;
     --text: #f0e8e8;
     --muted: #8a7070;
-    --pin: #e74c3c;
+    --pin: #f07070;
     --wire: #f39c12;
     --unused: #2a1a1a;
     --unused-text: #5a4040;
@@ -302,90 +302,6 @@
   .relay-unused .relay-use { color: var(--unused-text); }
   .relay-unused .relay-fuse { color: var(--unused-text); }
 
-  /* QR SECTION */
-  .qr-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 24px;
-    text-align: center;
-    max-width: 420px;
-    margin: 0 auto;
-  }
-  .qr-section h2 {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  .qr-section p {
-    font-size: 12px;
-    color: var(--muted);
-    margin-bottom: 20px;
-  }
-  #url-input {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    color: var(--text);
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 12px;
-    padding: 10px 12px;
-    width: 100%;
-    outline: none;
-    margin-bottom: 12px;
-    transition: border-color 0.15s;
-  }
-  #url-input:focus { border-color: var(--accent); }
-  #url-input::placeholder { color: var(--muted); }
-  .btn {
-    background: var(--accent);
-    color: #0f1117;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 10px 20px;
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 20px;
-    transition: opacity 0.15s;
-  }
-  .btn:hover { opacity: 0.85; }
-  #qr-output {
-    display: none;
-    margin-top: 8px;
-  }
-  #qr-output canvas, #qr-output img {
-    border: 4px solid #fff;
-    border-radius: 4px;
-    max-width: 200px;
-  }
-  .qr-instructions {
-    margin-top: 16px;
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.7;
-    text-align: left;
-    background: var(--surface2);
-    border-radius: var(--radius);
-    padding: 12px 14px;
-  }
-  .qr-instructions ol {
-    padding-left: 16px;
-    margin-top: 6px;
-  }
-  .qr-instructions li { margin-bottom: 3px; }
-  .qr-instructions strong { color: var(--accent); }
-  #download-btn {
-    display: none;
-    margin-top: 10px;
-    background: var(--surface2);
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-
   /* SEARCH */
   tr.hidden-row { display: none; }
   .card.hidden-card { display: none; }
@@ -419,7 +335,6 @@
     <div class="tab" data-tab="j3">J3</div>
     <div class="tab" data-tab="dash">Dash</div>
     <div class="tab" data-tab="leash">Leash Box</div>
-    <div class="tab" data-tab="qr">QR Code</div>
   </div>
 </header>
 
@@ -492,35 +407,9 @@
   <div class="relay-grid" id="leash-grid"></div>
 </div>
 
-<!-- QR -->
-<div class="section" id="tab-qr">
-  <div class="section-title">Generate QR Code</div>
-  <div class="qr-section">
-    <h2>Link to Google Sheets</h2>
-    <p>Paste your Google Sheets sharing URL below, then generate a QR code to print or save.</p>
-    <input type="text" id="url-input" placeholder="https://docs.google.com/spreadsheets/d/..." />
-    <button class="btn" onclick="generateQR()">Generate QR Code</button>
-    <div id="qr-output">
-      <div id="qrcode"></div>
-      <button class="btn" id="download-btn" onclick="downloadQR()">Download QR Code</button>
-    </div>
-    <div class="qr-instructions">
-      <strong>How to set this up:</strong>
-      <ol>
-        <li>Open your Excel file, go to <strong>File → Save As → Google Sheets</strong> (or upload at drive.google.com)</li>
-        <li>In Google Sheets, click <strong>Share → Change to anyone with the link → Viewer</strong></li>
-        <li>Copy the link and paste it above</li>
-        <li>Generate and download the QR code</li>
-        <li>Print and laminate it — stick it inside the boat near the harness</li>
-      </ol>
-    </div>
-  </div>
-</div>
 
 </main>
 
-<!-- QR Library -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
 // ─── DATA ───────────────────────────────────────────────────────────────────
@@ -850,40 +739,6 @@ function switchTab(name) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
   document.querySelector(`.tab[data-tab="${name}"]`).classList.add('active');
   document.getElementById('tab-' + name).classList.add('visible');
-}
-
-// ─── QR CODE ─────────────────────────────────────────────────────────────────
-
-let qrInstance = null;
-
-function generateQR() {
-  const url = document.getElementById('url-input').value.trim();
-  if (!url) { alert('Please paste a URL first.'); return; }
-
-  const out = document.getElementById('qr-output');
-  const qrDiv = document.getElementById('qrcode');
-  qrDiv.innerHTML = '';
-  out.style.display = 'block';
-
-  qrInstance = new QRCode(qrDiv, {
-    text: url,
-    width: 200,
-    height: 200,
-    colorDark: '#0f1117',
-    colorLight: '#ffffff',
-    correctLevel: QRCode.CorrectLevel.H
-  });
-
-  document.getElementById('download-btn').style.display = 'block';
-}
-
-function downloadQR() {
-  const canvas = document.querySelector('#qrcode canvas');
-  if (!canvas) return;
-  const link = document.createElement('a');
-  link.download = 'WireHarness_QR_BrendenWellsRouse.png';
-  link.href = canvas.toDataURL('image/png');
-  link.click();
 }
 
 // Hide unused rows in tables by default - keep them just dimmed (already handled by CSS)
