@@ -237,6 +237,17 @@
   tr.hidden-row { display: none; }
   .card.hidden-card { display: none; }
   .no-results { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 0; font-style: italic; }
+  footer {
+    text-align: center;
+    padding: 24px 16px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--unused-text);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-top: 1px solid var(--border);
+    margin-top: 24px;
+  }
 </style>
 </head>
 <body>
@@ -244,7 +255,6 @@
 <header>
   <div class="header-top">
     <div class="title-block">
-      <div class="eyebrow">Wire Harness Reference — Built June 2026</div>
       <h1>Brenden Wells // <span>19' Rouse</span></h1>
     </div>
     <div class="search-wrap" style="flex:1; max-width:220px;">
@@ -267,12 +277,12 @@
 <main>
 
 <div class="section visible" id="tab-deutsch">
-  <div class="section-title">Deutsch Connectors</div>
+  <div class="section-title">Deutsch</div>
   <div class="card-grid" id="deutsch-cards"></div>
 </div>
 
 <div class="section" id="tab-j1a">
-  <div class="section-title">J1A — ECU Connector A (Sensors &amp; Inputs)</div>
+  <div class="section-title">J1A</div>
   <div class="table-wrap">
     <table id="j1a-table">
       <thead><tr><th>Pin</th><th>Use</th><th>Color</th><th>Purpose</th><th>Note</th></tr></thead>
@@ -282,7 +292,7 @@
 </div>
 
 <div class="section" id="tab-j1b">
-  <div class="section-title">J1B — ECU Connector B (Outputs &amp; Injectors)</div>
+  <div class="section-title">J1B</div>
   <div class="table-wrap">
     <table id="j1b-table">
       <thead><tr><th>Pin</th><th>Use</th><th>Color</th><th>Purpose</th><th>Note</th></tr></thead>
@@ -292,7 +302,7 @@
 </div>
 
 <div class="section" id="tab-j2a">
-  <div class="section-title">J2A — ECU Connector 2A (Pressure Sensors)</div>
+  <div class="section-title">J2A</div>
   <div class="table-wrap">
     <table id="j2a-table">
       <thead><tr><th>Pin</th><th>Use</th><th>Color</th><th>Purpose</th><th>PSI</th></tr></thead>
@@ -302,7 +312,7 @@
 </div>
 
 <div class="section" id="tab-j3">
-  <div class="section-title">J3 — Oil Pressure Connector</div>
+  <div class="section-title">J3</div>
   <div class="table-wrap">
     <table id="j3-table">
       <thead><tr><th>Pin</th><th>Use</th><th>Color</th><th>Purpose</th></tr></thead>
@@ -312,7 +322,7 @@
 </div>
 
 <div class="section" id="tab-dash">
-  <div class="section-title">Dash Connector</div>
+  <div class="section-title">Dash</div>
   <div class="table-wrap">
     <table id="dash-table">
       <thead><tr><th>Pin</th><th>Use</th><th>Color</th><th>Note</th></tr></thead>
@@ -322,7 +332,7 @@
 </div>
 
 <div class="section" id="tab-leash">
-  <div class="section-title">Leash Relay Module — Relays &amp; Fuses</div>
+  <div class="section-title">Leash Relay Module</div>
   <div class="relay-grid" id="leash-grid"></div>
   <div class="leash-legend">
     <span><span class="dot" style="background:#e05555"></span> Power — Red</span>
@@ -330,7 +340,7 @@
   </div>
 </div>
 <div class="section" id="tab-manuals">
-  <div class="section-title">Device Manuals</div>
+  <div class="section-title">Manuals</div>
   <div class="manual-grid">
     <a class="manual-card" href="https://documents.holley.com/0b8eaa8389d9d1b734a4a0d96bfbaddb00469e16.pdf" target="_blank" rel="noopener">
       <div class="manual-label">Holley</div>
@@ -878,5 +888,6 @@ document.getElementById('search').addEventListener('input', function() {
   document.getElementById(cid)?.appendChild(el);
 });
 </script>
+<footer>Built by Kyler Scharpen and Dustin Harris — June 2026</footer>
 </body>
 </html>
