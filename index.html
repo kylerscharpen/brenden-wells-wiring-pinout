@@ -444,16 +444,16 @@ const deutsch = [
   {
     name: "Solenoid 1 (Bucket)", type: "DTM-4",
     pins: [
-      { fn: "Power",                                          color: "Red" },
-      { fn: "Power (jumped from Pin 1)",                      color: "Red" },
-      { fn: "Output to ECU — 2 Step/Launch Input #1",         color: "Red" },
-      { fn: "Ground",                                         color: "Black" },
+      { fn: "Signal 1 (Up)",                                    color: "White/Blue" },
+      { fn: "Output to ECU — 2 Step/Launch Input #1",           color: "White/Blue" },
+      { fn: "Signal 2 (Down)",                                  color: "White/Blue" },
+      { fn: "Ground",                                           color: "Black" },
     ]
   },
   {
     name: "Solenoid 2 (Pop Off)", type: "DTM-3",
     pins: [
-      { fn: "Power",    color: "Grey/Yellow" },
+      { fn: "Signal 1 (Down/Closed)", color: "Grey/Yellow" },
       { fn: "Not Used", color: "" },
       { fn: "Ground",   color: "Black" },
     ]
@@ -461,10 +461,10 @@ const deutsch = [
   {
     name: "Steering Wheel", type: "DTM-12",
     pins: [
-      { fn: "Power",                          color: "Red" },
-      { fn: "Power (jumped from Pin 1)",       color: "Red" },
-      { fn: "Power (jumped from Pin 1)",       color: "Red" },
-      { fn: "Power (jumped from Pin 1)",       color: "Red" },
+      { fn: "Power",       color: "Red" },
+      { fn: "Power",       color: "Red" },
+      { fn: "Power",       color: "Red" },
+      { fn: "Power",       color: "Red" },
       { fn: "Diverter Up",                    color: "Dark Blue" },
       { fn: "Diverter Down",                  color: "Dark Green" },
       { fn: "Bucket Up",                      color: "Light Blue" },
@@ -496,18 +496,18 @@ const deutsch = [
   {
     name: "Boat Harness In Box", type: "DT-12",
     pins: [
-      { fn: "Constant 12v",             color: "Red" },
-      { fn: "Switched 12v / Ignition",  color: "White" },
-      { fn: "CAN Lo",                   color: "Orange/Black" },
-      { fn: "CAN Hi",                   color: "Orange" },
-      { fn: "Starter",                  color: "Purple" },
-      { fn: "Air Compressor Trigger",   color: "Yellow" },
-      { fn: "Not Used",                 color: "" },
-      { fn: "Virtual Switch 1",         color: "Red/Blue" },
-      { fn: "Virtual Switch 2",         color: "Red/Yellow" },
-      { fn: "Scramble",                 color: "Tan" },
-      { fn: "Diverter Up",              color: "Dark Blue" },
-      { fn: "Pop Off Input",            color: "Red/Green" },
+      { fn: "Constant 12v Dash",                    color: "Red" },
+      { fn: "Switched 12v / Ignition",               color: "White" },
+      { fn: "CAN Lo",                                color: "Orange/Black" },
+      { fn: "CAN Hi",                                color: "Orange" },
+      { fn: "Starter Trigger",                       color: "Purple" },
+      { fn: "Air Compressor Trigger",                color: "Yellow" },
+      { fn: "Not Used",                              color: "" },
+      { fn: "Virtual Switch 1 — Future Use",         color: "Red/Blue" },
+      { fn: "Virtual Switch 2 — Future Use",         color: "Red/Yellow" },
+      { fn: "Scramble",                              color: "Tan" },
+      { fn: "Diverter Up Output from ECU (timer)",   color: "Dark Blue" },
+      { fn: "Pop off input from steering wheel",     color: "Red/Green" },
     ]
   },
   {
