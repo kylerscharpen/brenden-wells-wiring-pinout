@@ -211,7 +211,29 @@
   .leash-legend span { display: flex; align-items: center; gap: 6px; }
   .leash-legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
-  /* SEARCH */
+  .manual-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 600px) { .manual-grid { grid-template-columns: 1fr 1fr; } }
+  .manual-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .manual-card:hover { border-color: var(--accent); background: var(--surface2); }
+  .manual-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .manual-name { font-weight: 600; font-size: 14px; color: var(--text); }
+  .manual-arrow { font-size: 18px; color: var(--muted); margin-top: 4px; }
   tr.hidden-row { display: none; }
   .card.hidden-card { display: none; }
   .no-results { text-align: center; color: var(--muted); font-size: 13px; padding: 32px 0; font-style: italic; }
@@ -238,6 +260,7 @@
     <div class="tab" data-tab="j3">J3</div>
     <div class="tab" data-tab="dash">Dash</div>
     <div class="tab" data-tab="leash">Leash Relay Module</div>
+    <div class="tab" data-tab="manuals">Manuals</div>
   </div>
 </header>
 
@@ -304,6 +327,56 @@
   <div class="leash-legend">
     <span><span class="dot" style="background:#e05555"></span> Power — Red</span>
     <span><span class="dot" style="background:#333"></span> Ground — Black</span>
+  </div>
+</div>
+<div class="section" id="tab-manuals">
+  <div class="section-title">Device Manuals</div>
+  <div class="manual-grid">
+    <a class="manual-card" href="https://documents.holley.com/0b8eaa8389d9d1b734a4a0d96bfbaddb00469e16.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Dominator ECU</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://documents.holley.com/56876c9c083e4139f3c84656b06098de804e54bb.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Dominator Dash</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://documents.holley.com/199r11220.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Smart Coils</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://documents.holley.com/547d9f42d9f6b2658d3ef40daf4d6f17f74c1e10.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Laser Fuel Level Sensor</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://documents.holley.com/2903f107171cf61f8f18555f0a128d18787b5937.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Crank Trigger</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://documents.holley.com/e39e9dd2b817023864b560fe2bd63e964a215cd8.pdf" target="_blank" rel="noopener">
+      <div class="manual-label">Holley</div>
+      <div class="manual-name">Cam Sync</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://www.dropbox.com/scl/fo/g26s11xbos357gfpataez/AIh7wVsfiUQdi10m6MCYiVU?dl=0&e=1&preview=Pro8.pdf&rlkey=ttam7nylr20u22iur5qde6ohw" target="_blank" rel="noopener">
+      <div class="manual-label">Leash</div>
+      <div class="manual-name">Leash Relay Module</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://cdn.shopify.com/s/files/1/0063/7249/1316/files/Lowdoller_Motorsports_799_and_899_Series_Calibration.pdf?v=1727362116" target="_blank" rel="noopener">
+      <div class="manual-label">Lowdoller Motorsports</div>
+      <div class="manual-name">Pressure Transducer Scaling</div>
+      <div class="manual-arrow">↗</div>
+    </a>
+    <a class="manual-card" href="https://cdn.shopify.com/s/files/1/0043/6807/2822/files/RIFE-Boost-Controller-Instructions-12-19-25.pdf?v=1766159900" target="_blank" rel="noopener">
+      <div class="manual-label">Rife</div>
+      <div class="manual-name">Boost Controller</div>
+      <div class="manual-arrow">↗</div>
+    </a>
   </div>
 </div>
 
